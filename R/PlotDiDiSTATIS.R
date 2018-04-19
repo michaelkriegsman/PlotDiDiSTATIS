@@ -1,5 +1,5 @@
 #PlotDiDiSTATIS.R
-
+#
 #' Plot results of DiDiSTATIS
 #'
 #' @param res_DiDiSTATIS The output of EigenHiDiSTATIS

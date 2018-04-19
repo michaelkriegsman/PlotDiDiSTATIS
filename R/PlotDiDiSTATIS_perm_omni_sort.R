@@ -1,5 +1,6 @@
 #'Plot results from omnibus test of Null Hypothesis
 #'
+#'
 #'@param res_DiDiSTATIS Output from DiDiSTATIS with Perm_omnibus==TRUE
 #'@return Histograms of the Dev2's
 #'@export

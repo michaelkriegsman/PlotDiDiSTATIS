@@ -1,5 +1,6 @@
 #'Plot results from bootstrap resampling of Tables for HiDiSTATIS
 #'
+#'
 #'@param res_HiDiSTATIS Output from HiDiSTATIS with Boot_tables==TRUE
 #'@return Output
 #'@export

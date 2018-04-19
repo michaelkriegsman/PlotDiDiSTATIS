@@ -1,5 +1,6 @@
 #'Plot results from LOO cross-validation of Tables for HiDiSTATIS
 #'
+#'
 #'@param res_HiDiSTATIS Output from HiDiSTATIS with LOO_tables==TRUE
 #'@return Output
 #'@export

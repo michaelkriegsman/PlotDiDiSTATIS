@@ -1,5 +1,6 @@
 #'Plot results from Bootstrap on the Rows of DiMDS
 #'
+#'
 #'@param res_DiMDS Output from DiMDS
 #'@return 95% Bootstrap confidence intervals
 #'@export

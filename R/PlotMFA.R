@@ -1,5 +1,5 @@
 #PlotMFA.R
-
+#'
 #' Plot results of MFA
 #'
 #' @param res_MFA The output of EigenMFA

@@ -1,5 +1,5 @@
 #PlotHiDiSTATIS.R
-
+#
 #' Plot results of HiDiSTATIS
 #'
 #' @param res_HiDiSTATIS The output of EigenHiDiSTATIS
@@ -56,7 +56,7 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
     these_rows <- from:to
     Fd_rows[these_rows,] <- Fd[,,d]
   }
-  
+
   Fcd_rows <- matrix(NA, A*CD, ncol(F))
   for(cd in 1:CD){
     from <- 1 + (A*(cd-1))
@@ -64,14 +64,14 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
     these_rows <- from:to
     Fcd_rows[these_rows,] <- Fcd[,,cd]
   }
-  
+
   #constraints
   constraints_Cons <- minmaxHelper(mat1 = F, #mat1 = rbind(F, Fk[,,1], Fk[,,2], Fk[,,3]),
                                    axis1 = axes[1], axis2 = axes[2])
-  
+
   constraints_Groups <- minmaxHelper(mat1 = rbind(F, Fd_rows),
                                      axis1 = axes[1], axis2 = axes[2])
-  
+
   constraints_PFS <- minmaxHelper(mat1 = rbind(F, Fcd_rows), #mat1 = rbind(F, Fk[,,1], Fk[,,2], Fk[,,3]),
                                   axis1 = axes[1], axis2 = axes[2])
   ###################################################################################
@@ -116,7 +116,7 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
 
     AndTheNames <- paste0("text(Fd_Berries[,,",d,"], col = colors_B, labels = colnames(DESIGN_rows))")
     eval(parse(text = AndTheNames))
-    
+
     PlotFd <- paste0("prettyGraphs::prettyPlot(Fd[,axes,",d,"],
                      dev.new=FALSE, new.plot=FALSE,
                      display_names = FALSE, cex=1.5,
@@ -136,7 +136,7 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
 
 
   #Map 3: Group Consensus with Consensus
-  
+
   #depending on what I want, print all groups on this 1, or recopy this background once for each group... put it in the loop
    # PlotF <- paste0("prettyGraphs::prettyPlot(F[,axes],
    #                  #dev.new=FALSE, new.plot=TRUE,
@@ -152,7 +152,7 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
    #                  # In future, change this to compute the within-group average, and use colors_B
    #                  main = paste0(main,'Group Consensus: ', '",colnames(DESIGN$tables$MusExp_mat)[d],"'))")
    #  eval(parse(text = PlotF))
-    
+
     for(d in 1:D){
 
     PlotF <- paste0("prettyGraphs::prettyPlot(F[,axes],
@@ -169,18 +169,18 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
                     # In future, change this to compute the within-group average, and use colors_B
                     main = paste0(main,'Group Consensus: ', '",colnames(DESIGN$tables$MusExp_mat)[d],"'))")
     eval(parse(text = PlotF))
-    
+
     #AndTheNames <- paste0("text(Fd_Berries[,,",d,"], col = colors_B, labels = colnames(DESIGN_rows))")
     #eval(parse(text = AndTheNames))
-    
+
     #color by colors_AB
     #ConnectTheDots <- paste0("segments(Fd[,axes[1],",d,"], Fd[,axes[2],",d,"], F[,axes[1]], F[,axes[2]], colors_AB)")
     #eval(parse(text = ConnectTheDots))
-    
+
     #color by colors_D
     ConnectTheDots <- paste0("segments(Fd[,axes[1],",d,"], Fd[,axes[2],",d,"], F[,axes[1]], F[,axes[2]], colors_D[d])")
     eval(parse(text = ConnectTheDots))
-    
+
     PlotFd <- paste0("prettyGraphs::prettyPlot(Fd[,axes,",d,"],
                      dev.new=FALSE, new.plot=FALSE,
                      display_names = FALSE, cex=1.5,
@@ -195,28 +195,28 @@ PlotHiDiSTATIS <- function(res_HiDiSTATIS, axes = c(1,2), main=NULL){
                      # In future, change this to compute the within-group average, and use colors_B
                      main = paste0(main,'Group Consensus: ', '",colnames(DESIGN$tables$MusExp_mat)[d],"'))")
     eval(parse(text = PlotFd))
-    
+
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   #To explore these results,
   #1) Show that a single point in the grand comp is the (weighted) barycenter of the 3 group compromises
     #and set the Ctrb (the size of the points) as the weight of the group comp

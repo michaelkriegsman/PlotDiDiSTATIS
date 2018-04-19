@@ -1,5 +1,5 @@
 #PlotDiMDS.R
-
+#
 #' Plot results of DiMDS
 #'
 #' @param res_DiMDS The output of DiMDS

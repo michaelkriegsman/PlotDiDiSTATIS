@@ -1,5 +1,6 @@
 #'Plot results from LOO on the Rows of DiMDS
 #'
+#'
 #'@param res_DiMDS Output from DiMDS
 #'@return LOO results
 #'@export

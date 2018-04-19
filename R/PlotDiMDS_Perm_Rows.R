@@ -1,5 +1,6 @@
 #'Plot results from test of Null Hypothesis on Rows
 #'
+#'
 #'@param res_DiMDS Output from DiMDS with Perm_rows==TRUE
 #'@return Histograms of the r2's
 #'@export

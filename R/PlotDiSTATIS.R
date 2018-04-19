@@ -1,5 +1,5 @@
 #PlotDiSTATIS.R
-
+#'
 #' Plot results of DiSTATIS
 #'
 #' @param res_DiSTATIS The output of EigenDiSTATIS
@@ -126,19 +126,19 @@ PlotDiSTATIS <- function(res_DiSTATIS, axes = c(1,2), main=NULL){
              Fk[Ss, axes[1], k], Fk[Ss, axes[2], k],
              col = colors_AB[Ss])
   }
-  
-  
-  
+
+
+
   # Currently broken
-  # #4. Plot PFS_d  
+  # #4. Plot PFS_d
   # #Getting messy in here....
   # res_DiSTATIS$Fd <- array(NA, dim=c(nrow(F), ncol(F), ncol(DESIGN$tables$MusExp_mat)))
   # res_DiSTATIS$Fd[,,1]  <- apply(res_DiSTATIS$ProjCP$F[,,which(DESIGN$tables$MusExp_mat[,1]==1)], c(1,2), mean)
   # res_DiSTATIS$Fd[,,2]  <- apply(res_DiSTATIS$ProjCP$F[,,which(DESIGN$tables$MusExp_mat[,2]==1)], c(1,2), mean)
   # res_DiSTATIS$Fd[,,3] <- apply(res_DiSTATIS$ProjCP$F[,,which(DESIGN$tables$MusExp_mat[,3]==1)], c(1,2), mean)
-  # 
+  #
   # for(d in 1:ncol(DESIGN$tables$MusExp_mat)){
-  # 
+  #
   # PlotFd <- paste0("prettyGraphs::prettyPlot(res_DiSTATIS$Fd[,axes,",d,"],
   #                    #dev.new=FALSE, new.plot=TRUE,
   #                    display_names = FALSE, cex=1.5,
@@ -153,10 +153,10 @@ PlotDiSTATIS <- function(res_DiSTATIS, axes = c(1,2), main=NULL){
   #                    # In future, change this to compute the within-group average, and use colors_B
   #                    main = paste0(main,'PFS for k=', '",rownames(DESIGN$tables$MusExp_mat)[k],"'))")
   # eval(parse(text = PlotFd))
-  # 
+  #
   # AndTheNames <- paste0("text(Fk_Berries[,,",k,"], col = colors_B, labels = colnames(DESIGN_rows))")
   # eval(parse(text = AndTheNames))
-  # 
+  #
   # # }
 
 

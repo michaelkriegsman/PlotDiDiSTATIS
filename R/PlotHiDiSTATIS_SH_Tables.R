@@ -1,5 +1,6 @@
 #'Plot results from SH cross-validation of Tables for HiDiSTATIS
 #'
+#'
 #'@param res_HiDiSTATIS Output from HiDiSTATIS with SH_tables==TRUE
 #'@return Output
 #'@export

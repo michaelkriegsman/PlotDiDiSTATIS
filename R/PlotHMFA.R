@@ -1,5 +1,5 @@
 #PlotHMFA.R
-
+#'
 #' Plot results of HMFA
 #'
 #' @param res_HMFA The output of EigenHMFA
@@ -121,7 +121,7 @@ PlotHMFA <- function(res_HMFA, axes = c(1,2), main=NULL){
 
   #Map 3: Group Consensus with Consensus
   for(d in 1:D){
-    
+
     PlotF <- paste0("prettyGraphs::prettyPlot(F[,axes],
                      #dev.new=FALSE, new.plot=TRUE,
                      display_names = FALSE, cex=1,
@@ -136,18 +136,18 @@ PlotHMFA <- function(res_HMFA, axes = c(1,2), main=NULL){
                      # In future, change this to compute the within-group average, and use colors_B
                      main = paste0(main,'Group Consensus: ', '",colnames(DESIGN$tables$MusExp_mat)[d],"'))")
     eval(parse(text = PlotF))
-    
+
     #AndTheNames <- paste0("text(Fd_Berries[,,",d,"], col = colors_B, labels = colnames(DESIGN_rows))")
     #eval(parse(text = AndTheNames))
-    
+
     #color by colors_AB
     #ConnectTheDots <- paste0("segments(Fd[,axes[1],",d,"], Fd[,axes[2],",d,"], F[,axes[1]], F[,axes[2]], colors_AB)")
     #eval(parse(text = ConnectTheDots))
-    
+
     #color by colors_D
     ConnectTheDots <- paste0("segments(Fd[,axes[1],",d,"], Fd[,axes[2],",d,"], F[,axes[1]], F[,axes[2]], colors_D[d])")
     eval(parse(text = ConnectTheDots))
-    
+
     PlotFd <- paste0("prettyGraphs::prettyPlot(Fd[,axes,",d,"],
                      dev.new=FALSE, new.plot=FALSE,
                      display_names = FALSE, cex=1.5,
@@ -162,7 +162,7 @@ PlotHMFA <- function(res_HMFA, axes = c(1,2), main=NULL){
                      # In future, change this to compute the within-group average, and use colors_B
                      main = paste0(main,'Group Consensus: ', '",colnames(DESIGN$tables$MusExp_mat)[d],"'))")
     eval(parse(text = PlotFd))
-    
+
   }
   #To explore these results,
   #1) Show that a single point in the grand comp is the (weighted) barycenter of the 3 group Consensuss

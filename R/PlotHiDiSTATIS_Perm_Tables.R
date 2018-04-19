@@ -1,5 +1,6 @@
 #'Plot results from test of Null Hypothesis on Tables
 #'
+#'
 #'@param res_HiDiSTATIS Output from HiDiSTATIS with Perm_tables==TRUE
 #'@return Histograms of the Dev2's
 #'@export

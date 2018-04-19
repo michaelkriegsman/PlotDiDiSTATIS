@@ -1,5 +1,6 @@
 #'Plot results from SH on the Rows of DiMDS
 #'
+#'
 #'@param res_DiMDS Output from DiMDS
 #'@return SH results
 #'@export
