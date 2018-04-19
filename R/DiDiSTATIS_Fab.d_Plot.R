@@ -1,4 +1,4 @@
-# Plot_DiDiSTATIS_Fab.d
+# DiDiSTATIS_Fab.d_Plot
 #
 #' Plot Fab.d (Discriminant Group Partial Factor Scores)
 #'
@@ -6,7 +6,7 @@
 #' @param axes Axes to plot
 
 
-Plot_DiDiSTATIS_Fab.d <- function(res_DiDiSTATIS, axes = c(1,2)){
+DiDiSTATIS_Fab.d_Plot <- function(res_DiDiSTATIS, axes = c(1,2)){
 
   prettyPlot(res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond,
              col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B, .8),

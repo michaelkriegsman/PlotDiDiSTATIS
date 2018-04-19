@@ -1,4 +1,4 @@
-# Plot_DiDiSTATIS_F.b..
+# DiDiSTATIS_F.b.._Plot
 #
 #' Plot F.b.. (Barycentric Grand Factor Scores)
 #'
@@ -6,7 +6,7 @@
 #' @param axes Axes to plot
 #'
 
-Plot_DiDiSTATIS_F.b.. <- function(res_DiDiSTATIS, axes = c(1,2)){
+DiDiSTATIS_F.b.._Plot <- function(res_DiDiSTATIS, axes = c(1,2)){
 
   prettyPlot(res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond,
              col = res_DiDiSTATIS$input$DESIGN_rows$colors_B,

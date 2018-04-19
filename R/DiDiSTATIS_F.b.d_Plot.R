@@ -1,4 +1,4 @@
-# Plot_DiDiSTATIS_F.b.d
+# DiDiSTATIS_F.b.d_Plot
 #
 #' Plot F.b.d (Barycentric Group Partial Factor Scores)
 #'
@@ -6,7 +6,7 @@
 #' @param axes Axes to plot
 
 
-Plot_DiDiSTATIS_F.b.d <- function(res_DiDiSTATIS, axes = c(1,2)){
+DiDiSTATIS_F.b.d_Plot <- function(res_DiDiSTATIS, axes = c(1,2)){
 
   prettyPlot(res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond, col = res_DiDiSTATIS$input$DESIGN_rows$colors_B,
              cex = 3, pch=15,
