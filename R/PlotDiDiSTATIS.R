@@ -2,8 +2,8 @@
 #
 #' Plot results of DiDiSTATIS
 #'
-#' @param res_DiDiSTATIS The output of EigenHiDiSTATIS
-#' @param axes Axes to plot. By default, c(1,2)
+#' @param res_DiDiSTATIS The output of EigenDiDiSTATIS
+#' @param axes Axes to plot
 #' @param main Title of factor map
 #' @export
 
