@@ -7,9 +7,9 @@
 PlotDiDiSTATIS(res_DiDiSTATIS, axes = c(1, 2), main = NULL)
 }
 \arguments{
-\item{res_DiDiSTATIS}{The output of EigenHiDiSTATIS}
+\item{res_DiDiSTATIS}{The output of EigenDiDiSTATIS}
 
-\item{axes}{Axes to plot. By default, c(1,2)}
+\item{axes}{Axes to plot}
 
 \item{main}{Title of factor map}
 }
