@@ -14,8 +14,9 @@ Plot_DiDiSTATIS_Fab.. <- function(res_DiDiSTATIS, axes = c(1,2)){
              cex = 3, pch=15,
              constraints = minmaxHelper(res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..),
              main = "Disc Grand Compromise, Fab..")
-  Segments_from_to(res_DiDiSTATIS$res_BaryGrand$eig$Fb.., res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..,
-                   col = res_DiDiSTATIS$input$DESIGN_rows$colors_AB)
+  Segments_from_to(From = res_DiDiSTATIS$res_BaryGrand$eig$Fb..,
+                   To   = res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..,
+                   col  = res_DiDiSTATIS$input$DESIGN_rows$colors_AB)
   prettyPlot(res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..,
              col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_AB, .8),
              dev.new = F, new.plot = F, pch=15, cex = 1.5)
