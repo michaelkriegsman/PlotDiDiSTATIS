@@ -13,6 +13,7 @@ PlotConfusion <- function(Confusion_mat = NULL){
     scale_max <- ceiling(max(Confusion_mat))
   }
 
+  dev.new()
   corrplot(Confusion_mat,
            method = "square",
            col=viridis(40, direction=1, option="plasma",
