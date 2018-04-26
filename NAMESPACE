@@ -3,8 +3,6 @@
 export(PlotConfusion)
 export(PlotDiDiSTATIS_Boot_Tables)
 export(PlotDiDiSTATIS_Perm_Omni)
-export(PlotDiMDS_Boot_Rows)
-export(PlotDiMDS_LOO_Rows)
 export(PlotDiMDS_SH_Rows)
 export(PlotDiSTATIS)
 export(PlotHMFA)
