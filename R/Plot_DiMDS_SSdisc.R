@@ -11,7 +11,7 @@ Plot_DiMDS_SSdisc <- function(res_DiMDS, axes = c(1,2)){
   alpha <- .8
   prettyPlot(res_DiMDS$res_Disc_Full$proj2Bary$Fdisc[,axes],
              col = add.alpha(res_DiMDS$input$DESIGN_rows$colors_AB,alpha),
-             cex = 1.5, pch=15,
+             cex = 1.5, pch=15, dev.new = F,
              display_names = F,
              main = paste0("SSdisc = ",round(res_DiMDS$res_Disc_Full$proj2Bary$SSdisc,3)))
 
