@@ -4,7 +4,7 @@
 \alias{PlotConfusion}
 \title{Plot a confusion matrix}
 \usage{
-PlotConfusion(Confusion_mat = NULL)
+PlotConfusion(Confusion_mat = NULL, is.percent = FALSE)
 }
 \arguments{
 \item{Confusion_mat}{Confusion matrix}
