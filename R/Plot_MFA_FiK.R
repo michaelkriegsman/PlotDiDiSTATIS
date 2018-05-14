@@ -29,7 +29,7 @@ Plot_MFA_FiK <- function(res_MFA, axes = c(1,2), i = 0, Flip_axis1 = FALSE, Flip
 
   alpha1 <- .5
   prettyPlot(res_MFA$res_MFA$eig$F[,axes] %*% Flip_mat,
-             display_names = F, cex=1.5,
+             display_names = F, cex=1,
              dev.new = dev.new,
              constraints = constraints_PFS,
              xlab = paste0("Component ", axes[1]),
