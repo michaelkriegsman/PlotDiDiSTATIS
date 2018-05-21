@@ -4,10 +4,14 @@
 \alias{PlotConfusion}
 \title{Plot a confusion matrix}
 \usage{
-PlotConfusion(Confusion_mat = NULL, is.percent = FALSE)
+PlotConfusion(Confusion_mat = NULL, is.percent = FALSE, dev_new = TRUE)
 }
 \arguments{
 \item{Confusion_mat}{Confusion matrix}
+
+\item{is.percent}{Boolean}
+
+\item{dev_new}{Flag to appease ReporteRs (set FALSE to print results to pptx)}
 }
 \value{
 A pretty confusion matrix

@@ -2,10 +2,12 @@
 #'Plot a confusion matrix
 #'
 #'@param Confusion_mat Confusion matrix
+#'@param is.percent Boolean
+#'@param dev_new Flag to appease ReporteRs (set FALSE to print results to pptx)
 #'@return A pretty confusion matrix
 #'@export
 
-PlotConfusion <- function(Confusion_mat = NULL, is.percent = FALSE){
+PlotConfusion <- function(Confusion_mat = NULL, is.percent = FALSE, dev_new = TRUE){
 
   if(is.percent==FALSE){
     scale_max <- ceiling(max(Confusion_mat))
@@ -14,6 +16,7 @@ PlotConfusion <- function(Confusion_mat = NULL, is.percent = FALSE){
     scale_max <- 100
   }
 
+  if(dev_new) dev.new()
   corrplot(Confusion_mat,
            method = "square", #circle, square, pie, shade, color
            col=viridis(40, direction=1, option="plasma",
