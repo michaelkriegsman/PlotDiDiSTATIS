@@ -4,12 +4,14 @@
 \alias{Plot_DiMDS_SSab}
 \title{Plot SSab}
 \usage{
-Plot_DiMDS_SSab(res_DiMDS, axes = c(1, 2))
+Plot_DiMDS_SSab(res_DiMDS, axes = c(1, 2), dev_new = F)
 }
 \arguments{
 \item{res_DiMDS}{The output of DiMDS}
 
 \item{axes}{Axes to plot, default = c(1,2)}
+
+\item{dev_new}{Flag to create a new device}
 }
 \description{
 Plot SSab

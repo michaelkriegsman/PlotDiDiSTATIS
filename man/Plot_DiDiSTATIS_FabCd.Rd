@@ -4,7 +4,7 @@
 \alias{Plot_DiDiSTATIS_FabCd}
 \title{Plot FaB.d (Discriminant Group Partial Factor Scores)}
 \usage{
-Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, axes = c(1, 2), ab = 5, d = 2,
+Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, axes = c(1, 2), ab = 1, d = 1,
   quiet_B.. = FALSE, Flip_axis1 = FALSE, Flip_axis2 = FALSE,
   dev.new = TRUE)
 }

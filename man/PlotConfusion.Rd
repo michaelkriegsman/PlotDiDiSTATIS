@@ -4,12 +4,12 @@
 \alias{PlotConfusion}
 \title{Plot a confusion matrix}
 \usage{
-PlotConfusion(Confusion_mat = NULL, is.percent = FALSE, dev_new = TRUE)
+PlotConfusion(Confusion_mat = NULL, scale_max_100 = TRUE, dev_new = TRUE)
 }
 \arguments{
 \item{Confusion_mat}{Confusion matrix}
 
-\item{is.percent}{Boolean}
+\item{scale_max_100}{Boolean to set the max to 100}
 
 \item{dev_new}{Flag to appease ReporteRs (set FALSE to print results to pptx)}
 }

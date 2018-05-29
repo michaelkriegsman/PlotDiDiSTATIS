@@ -4,14 +4,15 @@
 #'
 #' @param res_DiMDS The output of DiMDS
 #' @param axes Axes to plot, default = c(1,2)
+#' @param dev_new Flag to create a new device
 #' @export
 
-Plot_DiMDS_SS.b <- function(res_DiMDS, axes = c(1,2)){
+Plot_DiMDS_SS.b <- function(res_DiMDS, axes = c(1,2), dev_new = T){
 
   alpha <- .8
   prettyPlot(res_DiMDS$res_Disc_Full$proj2Bary$Fdisc[,axes],
              col = add.alpha(res_DiMDS$input$DESIGN_rows$colors_AB,alpha),
-             cex = 1.5, pch=15, dev.new = F,
+             cex = 1.5, pch=15, dev.new = dev_new,
              display_names = F,
              main = paste0("SS.b = ",round(res_DiMDS$res_Disc_Full$proj2Bary$SSb,3)))
 

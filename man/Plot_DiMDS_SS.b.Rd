@@ -4,12 +4,14 @@
 \alias{Plot_DiMDS_SS.b}
 \title{Plot SS.b}
 \usage{
-Plot_DiMDS_SS.b(res_DiMDS, axes = c(1, 2))
+Plot_DiMDS_SS.b(res_DiMDS, axes = c(1, 2), dev_new = T)
 }
 \arguments{
 \item{res_DiMDS}{The output of DiMDS}
 
 \item{axes}{Axes to plot, default = c(1,2)}
+
+\item{dev_new}{Flag to create a new device}
 }
 \description{
 Plot SS.b

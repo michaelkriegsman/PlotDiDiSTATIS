@@ -79,16 +79,13 @@ Plot_DiDiSTATIS_FaB.d <- function(res_DiDiSTATIS, axes = c(1,2), priority = "ab"
                          col  = add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d], alpha_foreground),
                          lwd = 3)
       }
-
-      ### For each D, put B hulls around their respective ab stimuli
-      # for(b in 1:res_DiDiSTATIS$input$DESIGN_rows$B){
-      #   these_stimuli <- which(res_DiDiSTATIS$input$DESIGN_rows$mat[,b]==1)
-      #   hull.matrix <- res_DiDiSTATIS$res_BaryGrand$Proj_disc.D$F_disc.D[these_stimuli,,d]
-      #   peeledHull(hull.matrix[,axes],percentage=.95,lwd=4)
-      #   peeledHull(hull.matrix[,axes],percentage=.95,lwd=2,col=res_DiDiSTATIS$input$DESIGN_rows$colors_B[b])
-      # }
-
     }
+
+    legend(x = "right",
+           legend = c(res_DiDiSTATIS$input$DESIGN_rows$labels, " ", res_DiDiSTATIS$input$DESIGN_tables$labels),
+           col = c(add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B, alpha_background), 'white', add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D, alpha_foreground)),
+           pch = c(rep(15, res_DiDiSTATIS$input$DESIGN_rows$B), 15, rep(19, res_DiDiSTATIS$input$DESIGN_tables$D)),
+           pt.cex = 2)
   }
 
 
@@ -111,17 +108,28 @@ Plot_DiDiSTATIS_FaB.d <- function(res_DiDiSTATIS, axes = c(1,2), priority = "ab"
     prettyPlot(res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond[,axes] %*% Flip_mat,
                col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B,alpha_B..),
                cex = 3, pch=15,
+               display_points = F,
                dev.new = dev.new,
                xlab = paste0("Component ", axes[1]),
                ylab = paste0("Component ", axes[2]),
                constraints = minmaxHelper(rbind_array_2_matrix(res_DiDiSTATIS$res_BaryGrand$Proj_disc.D$F_disc.D[,axes,]) %*% Flip_mat),
                main = TheTitle)
 
+    Group_cols <- res_DiDiSTATIS$input$DESIGN_tables$colors_D
+    Group_cols[d] <- add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d], alpha_foreground)
+    Group_cols[-d] <- add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[-d], alpha_background)
+
+    legend(x = "right",
+           legend = c(res_DiDiSTATIS$input$DESIGN_rows$labels, " ", res_DiDiSTATIS$input$DESIGN_tables$labels),
+           col = c(add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B, alpha_foreground), 'white', Group_cols),
+           pch = c(rep(15, res_DiDiSTATIS$input$DESIGN_rows$B), 15, rep(19, res_DiDiSTATIS$input$DESIGN_tables$D)),
+           pt.cex = 2)
+
     for(d in 1:res_DiDiSTATIS$input$DESIGN_tables$D){
       Segments_from_to(From = res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond[,axes] %*% Flip_mat,
                        To   = res_DiDiSTATIS$res_BaryGrand$Proj_B.D$F_B.D_Cond[,axes,d] %*% Flip_mat,
-                       col  = add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d], alpha_B..),
-                       lwd = 3)
+                       col  = add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d], alpha_background),
+                       lwd = 1.5)
 
       prettyPlot(res_DiDiSTATIS$res_BaryGrand$Proj_B.D$F_B.D_Cond[,axes,d] %*% Flip_mat,
                  col = add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d],alpha_background),
@@ -136,6 +144,8 @@ Plot_DiDiSTATIS_FaB.d <- function(res_DiDiSTATIS, axes = c(1,2), priority = "ab"
                  col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_AB, alpha_foreground),
                  cex=1, pch=15,
                  new.plot = F, dev.new = F)
+
+
     }
 
     #if connect is 1 value...

@@ -4,12 +4,15 @@
 \alias{Plot_DiMDS_Perm_Rows_r2plain.b_perm}
 \title{Plot results from test of Null Hypothesis on Rows}
 \usage{
-Plot_DiMDS_Perm_Rows_r2plain.b_perm(res_DiMDS, Title = "r2plain.b_perm")
+Plot_DiMDS_Perm_Rows_r2plain.b_perm(res_DiMDS, Title = "r2plain.b_perm",
+  dev_new = T)
 }
 \arguments{
 \item{res_DiMDS}{Output from DiMDS_Perm_Rows}
 
 \item{Title}{Name the figure}
+
+\item{dev_new}{Flag to create a new device}
 }
 \value{
 Histogram of the r2 under the null

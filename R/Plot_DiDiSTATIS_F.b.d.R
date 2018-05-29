@@ -35,5 +35,11 @@ Plot_DiDiSTATIS_F.B.D <- function(res_DiDiSTATIS, axes = c(1,2), Flip_axis1 = FA
                new.plot = F, dev.new = F)
   }
 
+  legend(x = "right",
+         legend = c(res_DiDiSTATIS$input$DESIGN_rows$labels, " ", res_DiDiSTATIS$input$DESIGN_tables$labels),
+         col = add.alpha(c(res_DiDiSTATIS$input$DESIGN_rows$colors_B, 'white', res_DiDiSTATIS$input$DESIGN_tables$colors_D), alpha),
+         pch = c(rep(15, res_DiDiSTATIS$input$DESIGN_rows$B), 15, rep(19, res_DiDiSTATIS$input$DESIGN_tables$D)),
+         pt.cex = 2)
+
 }
 

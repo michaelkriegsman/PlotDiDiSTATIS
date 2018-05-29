@@ -4,7 +4,7 @@
 \alias{Plot_Hist}
 \title{Plot histogram}
 \usage{
-Plot_Hist(Distribution, alpha = 0.05, Score, Score_colors = "blue",
+Plot_Hist(Distribution, alpha = 0.05, Stat, Stat_colors = "blue",
   breaks = 40, pad = 1/5, main = NULL, dev_new = TRUE)
 }
 \arguments{
@@ -12,9 +12,9 @@ Plot_Hist(Distribution, alpha = 0.05, Score, Score_colors = "blue",
 
 \item{alpha}{The alpha threshold}
 
-\item{Score}{The score(s) to compare to the distribution}
+\item{Stat}{The statistic(s) to compare to the distribution}
 
-\item{Score_colors}{The score(s) to compare to the distribution}
+\item{Stat_colors}{The color(s) for each statistic}
 
 \item{pad}{A fraction (of the range), to pad xlim}
 
