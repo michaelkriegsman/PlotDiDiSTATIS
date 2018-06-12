@@ -105,6 +105,7 @@ Plot_DiDiSTATIS_FaB.d <- function(res_DiDiSTATIS, axes = c(1,2), priority = "ab"
 
   #### Priority = "d" ####
   if(priority=="d"){
+    d <- connect
     prettyPlot(res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond[,axes] %*% Flip_mat,
                col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B,alpha_B..),
                cex = 3, pch=15,
@@ -116,8 +117,10 @@ Plot_DiDiSTATIS_FaB.d <- function(res_DiDiSTATIS, axes = c(1,2), priority = "ab"
                main = TheTitle)
 
     Group_cols <- res_DiDiSTATIS$input$DESIGN_tables$colors_D
-    Group_cols[d] <- add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d], alpha_foreground)
-    Group_cols[-d] <- add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[-d], alpha_background)
+    if(connect!=0){
+      Group_cols[d] <- add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[d], alpha_foreground)
+      Group_cols[-d] <- add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D[-d], alpha_background)
+    }
 
     legend(x = "right",
            legend = c(res_DiDiSTATIS$input$DESIGN_rows$labels, " ", res_DiDiSTATIS$input$DESIGN_tables$labels),

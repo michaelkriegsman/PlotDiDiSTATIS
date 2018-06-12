@@ -12,6 +12,7 @@
 
 Plot_DiSTATIS_FiK <- function(res_DiSTATIS, axes = c(1,2), i = 0, Flip_axis1 = FALSE, Flip_axis2=FALSE, dev.new = TRUE){
 
+  TheMain <- paste0('PFS (i = ', i, ')')
 
   Flip_mat <- makeFlip_mat(Flip_axis1, Flip_axis2)
 
@@ -36,7 +37,7 @@ Plot_DiSTATIS_FiK <- function(res_DiSTATIS, axes = c(1,2), i = 0, Flip_axis1 = F
              ylab = paste0("Component ", axes[2]),
              col = add.alpha(res_DiSTATIS$input$DESIGN_rows$colors_AB,alpha1),
              pch=15,
-             main = paste0('PFS (i = 20, 33)'))
+             main = TheMain)
 
   prettyPlot(res_DiSTATIS$res_DiSTATIS$eig$F[i,axes] %*% Flip_mat,
              dev.new = F, new.plot = F,

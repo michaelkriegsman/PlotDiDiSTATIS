@@ -1,8 +1,10 @@
-
+#PlotConfusion_norm_SignedCtrb.R
+#
 #'Plot the signed contribution to Chi2
 #'
 #'@param Confusion_mat_norm Confusion matrix, row-normed
-#'@param scale_max_100 Boolean to set the max to 100%
+#'@param DESIGN_rows Design info for the rows
+#'@param scale_max_100 Boolean to set the max to 100 percent
 #'@param dev_new Flag to appease ReporteRs (set FALSE to print results to pptx)
 #'@return A pretty confusion matrix
 #'@export
