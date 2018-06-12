@@ -6,7 +6,7 @@
 #' @param axes Axes to plot
 #' @param i The stimulus to plot
 #' @param ellipse Boolean for ellipse or convex hull
-#' @param percentage
+#' @param percentage 1 - alpha threshold
 #' @param dev.new Flag to appease ReporteRs (set FALSE to print results to pptx)
 #' @return Histograms of the Dev2's
 #' @export

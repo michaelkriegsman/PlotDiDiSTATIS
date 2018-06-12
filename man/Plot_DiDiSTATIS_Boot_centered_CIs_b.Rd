@@ -17,6 +17,8 @@ Plot_DiDiSTATIS_Boot_centered_CIs_b(res_DiDiSTATIS, axes = c(1, 2), b = 1,
 
 \item{ellipse}{Boolean for ellipse or convex hull}
 
+\item{percentage}{1 - alpha threshold}
+
 \item{Flip_axis1}{Flag to flip Component 1}
 
 \item{Flip_axis2}{Flag to flip Component 2}

@@ -6,7 +6,7 @@
 #' @param axes Axes to plot
 #' @param b The barycenter to plot
 #' @param ellipse Boolean for ellipse or convex hull
-#' @param percentage
+#' @param percentage 1 - alpha threshold
 #' @param Flip_axis1 Flag to flip Component 1
 #' @param Flip_axis2 Flag to flip Component 2
 #' @param dev.new Flag to appease ReporteRs (set FALSE to print results to pptx)

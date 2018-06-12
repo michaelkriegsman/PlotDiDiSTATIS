@@ -16,6 +16,8 @@ Plot_HiDiSTATIS_Boot_centered_CIs(res_HiDiSTATIS, axes = c(1, 2), i = 1,
 
 \item{ellipse}{Boolean for ellipse or convex hull}
 
+\item{percentage}{1 - alpha threshold}
+
 \item{dev.new}{Flag to appease ReporteRs (set FALSE to print results to pptx)}
 }
 \value{
