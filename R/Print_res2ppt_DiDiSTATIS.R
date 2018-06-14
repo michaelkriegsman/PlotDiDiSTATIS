@@ -4,18 +4,15 @@
 #'
 #' @param res_DiDiSTATIS The output of DiDiSTATIS
 #' @param axes Axes to plot
+#' @param FabCd_ab For the FabCd plot, which stimulus to highlight
+#' @param FabCd_d For the FabCd plot, which group to highlight
 #' @param Flip_axis1 Flag to flip Component 1
 #' @param Flip_axis2 Flag to flip Component 2
 #' @param main Title
 #' @return A Powerpoint of results
 #' @export
 
-Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), Flip_axis1 = F, Flip_axis2 = F, main = NULL){
-
-  ############parameters I might add...
-  # FabCd_ab
-  # FabCd_d
-  ####################################
+Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), FabCd_ab = 1, FabCd_d = 1, Flip_axis1 = F, Flip_axis2 = F, main = NULL){
 
   # Create a PowerPoint document
   #for instructions, see: http://www.sthda.com/english/wiki/create-and-format-powerpoint-documents-from-r-software
@@ -41,8 +38,8 @@ Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), Flip_axis1 =
   # Slide 2 : Add plot: FabCd
   #+++++++++++++++++++++++
   doc <- addSlide(doc, "Content with Caption")
-  ab <- 1
-  d  <- 1
+  ab <- FabCd_ab
+  d  <- FabCd_d
   doc <- addTitle(doc, paste0("FabCd, ab = ", ab, ", d = ", d))
   plot_FabCd <- function(){ Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, ab = ab, d = d, quiet_B.. = TRUE, Flip_axis1 = Flip_axis1, Flip_axis2 = Flip_axis2, dev.new = F) }
   doc <- addPlot(doc, plot_FabCd, vector.graphic = TRUE)

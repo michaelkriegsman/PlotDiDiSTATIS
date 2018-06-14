@@ -4,13 +4,17 @@
 \alias{Print_res2ppt_DiDiSTATIS}
 \title{Print standard DiDiSTATIS results}
 \usage{
-Print_res2ppt_DiDiSTATIS(res_DiDiSTATIS, axes = c(1, 2), Flip_axis1 = F,
-  Flip_axis2 = F, main = NULL)
+Print_res2ppt_DiDiSTATIS(res_DiDiSTATIS, axes = c(1, 2), FabCd_ab = 1,
+  FabCd_d = 1, Flip_axis1 = F, Flip_axis2 = F, main = NULL)
 }
 \arguments{
 \item{res_DiDiSTATIS}{The output of DiDiSTATIS}
 
 \item{axes}{Axes to plot}
+
+\item{FabCd_ab}{For the FabCd plot, which stimulus to highlight}
+
+\item{FabCd_d}{For the FabCd plot, which group to highlight}
 
 \item{Flip_axis1}{Flag to flip Component 1}
 
