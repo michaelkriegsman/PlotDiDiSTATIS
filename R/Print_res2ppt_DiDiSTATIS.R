@@ -41,7 +41,7 @@ Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), FabCd_ab = 1
   ab <- FabCd_ab
   d  <- FabCd_d
   doc <- addTitle(doc, paste0("FabCd, ab = ", ab, ", d = ", d))
-  plot_FabCd <- function(){ Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, ab = ab, d = d, quiet_B.. = TRUE, Flip_axis1 = Flip_axis1, Flip_axis2 = Flip_axis2, dev.new = F) }
+  plot_FabCd <- function(){ Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, axes = axes, ab = ab, d = d, quiet_B.. = TRUE, Flip_axis1 = Flip_axis1, Flip_axis2 = Flip_axis2, dev.new = F) }
   doc <- addPlot(doc, plot_FabCd, vector.graphic = TRUE)
 
   # Slide Break : Grand Results ####
@@ -90,6 +90,14 @@ Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), FabCd_ab = 1
   doc <- addPlot(doc, plot_Confusion_SignedCtrb_norm_Fixed_Grand, vector.graphic = TRUE)
 
   if("Perm_Omnibus" %in% names(res_DiDiSTATIS)){
+    # Slide 4 : Add plot: Perm_r2_Plain_B
+    #+++++++++++++++++++++++
+    doc <- addSlide(doc, "Content with Caption")
+    doc <- addTitle(doc, "Perm_r2_Plain_B^..")
+    plot_Perm_r2_Plain_B.. <- function(){ Plot_DiDiSTATIS_Perm_r2_Plain_b_..(res_DiDiSTATIS, dev_new = F) }
+    doc <- addPlot(doc, plot_Perm_r2_Plain_B.., vector.graphic = TRUE)
+
+
     # Slide 4 : Add plot: Perm_r2_Categories
     #+++++++++++++++++++++++
     doc <- addSlide(doc, "Content with Caption")
@@ -144,6 +152,13 @@ Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), FabCd_ab = 1
     # Slide 8 : Add plot: Perm_r2_Categories
     #+++++++++++++++++++++++
     doc <- addSlide(doc, "Content with Caption")
+    doc <- addTitle(doc, "Perm_r2_Plain_b.D")
+    plot_Perm_r2_Plain_B.d <- function(){ Plot_DiDiSTATIS_Perm_r2_Plain_b_.d(res_DiDiSTATIS, dev_new = F) }
+    doc <- addPlot(doc, plot_Perm_r2_Plain_B.d, vector.graphic = TRUE)
+
+    # Slide 8 : Add plot: Perm_r2_Categories
+    #+++++++++++++++++++++++
+    doc <- addSlide(doc, "Content with Caption")
     doc <- addTitle(doc, "Perm_r2_Categories.D")
     plot_Perm_r2_Categories <- function(){ Plot_DiDiSTATIS_Perm_r2_Categories.D(res_DiDiSTATIS, dev_new = F) }
     doc <- addPlot(doc, plot_Perm_r2_Categories, vector.graphic = TRUE)
@@ -161,7 +176,7 @@ Print_res2ppt_DiDiSTATIS <- function(res_DiDiSTATIS, axes = c(1,2), FabCd_ab = 1
     #+++++++++++++++++++++++
     doc <- addSlide(doc, "Content with Caption")
     doc <- addTitle(doc, "Boot_CIs")
-    plot_Boot_CIs <- function(){ Plot_DiDiSTATIS_Boot_centered_CIs_BD(res_DiDiSTATIS, dev.new = F) }
+    plot_Boot_CIs <- function(){ Plot_DiDiSTATIS_Boot_centered_CIs_BD(res_DiDiSTATIS, dev.new = F, axes = axes, Flip_axis1 = Flip_axis1, Flip_axis2 = Flip_axis2) }
     doc <- addPlot(doc, plot_Boot_CIs, vector.graphic = TRUE)
 
   }

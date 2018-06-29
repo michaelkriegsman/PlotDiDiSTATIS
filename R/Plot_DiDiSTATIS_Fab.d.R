@@ -109,7 +109,7 @@ Plot_DiDiSTATIS_FaB.d <- function(res_DiDiSTATIS, axes = c(1,2), priority = "ab"
     prettyPlot(res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond[,axes] %*% Flip_mat,
                col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B,alpha_B..),
                cex = 3, pch=15,
-               display_points = F,
+               display_points = T,
                dev.new = dev.new,
                xlab = paste0("Component ", axes[1]),
                ylab = paste0("Component ", axes[2]),

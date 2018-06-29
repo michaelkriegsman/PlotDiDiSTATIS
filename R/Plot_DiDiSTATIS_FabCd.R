@@ -1,6 +1,6 @@
-# Plot_DiDiSTATIS_FaB.d
+# Plot_DiDiSTATIS_FabCd
 #
-#' Plot FaB.d (Discriminant Group Partial Factor Scores)
+#' Plot FabCd (Discriminant Group Partial Factor Scores)
 #'
 #' @param res_DiDiSTATIS The output of DiDiSTATIS
 #' @param axes Axes to plot
@@ -65,13 +65,13 @@ Plot_DiDiSTATIS_FabCd <- function(res_DiDiSTATIS, axes = c(1,2), ab = 1, d = 1, 
 
   Segments_from_to(From = res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond[b,axes] %*% Flip_mat,
                    To = res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..[Ab,axes] %*% Flip_mat,
-                   XandY = axes,
+                   XandY = c(1,2),
                    col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B[b], alpha_background),
                    lwd = 1)
 
   Segments_from_to(From = res_DiDiSTATIS$res_BaryGrand$eig$Fb..Cond[b,axes] %*% Flip_mat,
                    To = res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..[ab,axes] %*% Flip_mat,
-                   XandY = axes,
+                   XandY = c(1,2),
                    col = add.alpha(res_DiDiSTATIS$input$DESIGN_rows$colors_B[b], alpha_background),
                    lwd = 3)
 
@@ -85,7 +85,7 @@ Plot_DiDiSTATIS_FabCd <- function(res_DiDiSTATIS, axes = c(1,2), ab = 1, d = 1, 
 
   Segments_from_to(From = res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..[ab,axes] %*% Flip_mat,
                    To = t(res_DiDiSTATIS$res_BaryGrand$Proj_disc.D$F_disc.D[ab,axes,]) %*% Flip_mat,
-                   XandY = axes,
+                   XandY = c(1,2),
                    col = add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D, alpha_background),
                    lwd = 1)
 
@@ -97,7 +97,7 @@ Plot_DiDiSTATIS_FabCd <- function(res_DiDiSTATIS, axes = c(1,2), ab = 1, d = 1, 
 
   Segments_from_to(From = res_DiDiSTATIS$res_BaryGrand$Proj_disc..$F_disc..[ab,axes] %*% Flip_mat,
                    To = t(res_DiDiSTATIS$res_BaryGrand$Proj_disc.D$F_disc.D[ab,axes,d]) %*% Flip_mat,
-                   XandY = axes,
+                   XandY = c(1,2),
                    col = add.alpha(res_DiDiSTATIS$input$DESIGN_tables$colors_D, alpha_background),
                    lwd = 3)
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Plot_DiDiSTATIS_FabCd.R
 \name{Plot_DiDiSTATIS_FabCd}
 \alias{Plot_DiDiSTATIS_FabCd}
-\title{Plot FaB.d (Discriminant Group Partial Factor Scores)}
+\title{Plot FabCd (Discriminant Group Partial Factor Scores)}
 \usage{
 Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, axes = c(1, 2), ab = 1, d = 1,
   quiet_B.. = FALSE, Flip_axis1 = FALSE, Flip_axis2 = FALSE,
@@ -26,5 +26,5 @@ Plot_DiDiSTATIS_FabCd(res_DiDiSTATIS, axes = c(1, 2), ab = 1, d = 1,
 \item{dev.new}{Flag to appease ReporteRs (set FALSE to print results to pptx)}
 }
 \description{
-Plot FaB.d (Discriminant Group Partial Factor Scores)
+Plot FabCd (Discriminant Group Partial Factor Scores)
 }
